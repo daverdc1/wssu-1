@@ -20,8 +20,6 @@ export function DevPanel() {
   const [open, setOpen] = useState(false);
   const { announcement, updateAnnouncement, resetAnnouncementDismiss } = useDevSettings();
 
-  if (!import.meta.env.DEV) return null;
-
   const handleAnnouncementChange = (patch: Parameters<typeof updateAnnouncement>[0]) => {
     updateAnnouncement(patch);
     scrollToTop();
